@@ -1,0 +1,7 @@
+{
+  "name": "AlphaClients",
+  "description": "A smart lead generation tool using Gemini and Google Maps to find and format business contacts.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
