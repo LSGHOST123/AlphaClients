@@ -1,13 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
 import { Coordinates } from "../types";
 
-const apiKey = process.env.API_KEY;
-
-if (!apiKey) {
-  console.error("API_KEY is missing in the environment variables.");
-}
-
-const ai = new GoogleGenAI({ apiKey: apiKey || '' });
+// The API key must be obtained exclusively from the environment variable process.env.API_KEY
+// per @google/genai coding guidelines. Assume it is pre-configured and valid.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const MODEL_ID = "gemini-2.5-flash";
 
@@ -52,7 +48,12 @@ export const searchPlaces = async (
 
     if (location) {
       config.toolConfig = {
-        google_search_retrieval: {}
+        retrievalConfig: {
+          latLng: {
+            latitude: location.latitude,
+            longitude: location.longitude
+          }
+        }
       };
     }
 

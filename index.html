@@ -11,13 +11,13 @@
           extend: {
             colors: {
               neon: {
-                DEFAULT: '#39ff14', // Classic intense neon green
+                DEFAULT: '#39ff14', 
                 dim: '#15803d',
                 glow: 'rgba(57, 255, 20, 0.5)'
               },
               dark: {
-                bg: '#050505',     // Almost pure black
-                surface: '#111111', // Dark grey surface
+                bg: '#050505',
+                surface: '#111111', 
                 border: '#222222'
               }
             },
@@ -35,7 +35,6 @@
         background-color: #050505;
         color: #e2e8f0;
       }
-      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
         height: 8px;
@@ -51,22 +50,23 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #39ff14; 
       }
-      .neon-shadow {
-        box-shadow: 0 0 10px rgba(57, 255, 20, 0.2), 0 0 20px rgba(57, 255, 20, 0.1);
-      }
     </style>
   <script type="importmap">
 {
   "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry point for Vite -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
